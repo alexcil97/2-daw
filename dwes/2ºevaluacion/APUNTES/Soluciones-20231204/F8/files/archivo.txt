@@ -1,0 +1,4 @@
+Bienvenido al archivo de prueba.
+
+Este es un texto para que practiques la edición.
+Siente la libertad de hacer cambios y guardarlos.

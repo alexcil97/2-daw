@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function persona(nombre, peso){
+            this.nombre=nombre;
+            this.peso=peso;
+        }
+
+        persona.prototype.getPesoEnLibras = function () {
+            return this.peso * 2.20462;           
+        };
+
+        persona.prototype.setPesoEnKilos = function(nuevoPeso) {
+            this.peso = nuevoPeso;
+        };
+        
+        var persona1 = new persona('ricardo',70);
+
+
+        console.log(persona1.getPesoEnLibras());
+
+        persona1.setPesoEnKilos(75);
+
+        console.log(persona1.getPesoEnLibras());
+
+    </script>
+</body>
+</html>

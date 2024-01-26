@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Interactiva</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      height: 40px;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Crear la tabla y agregarla al body
+    var table = document.createElement("table");
+    var tbody = document.createElement("tbody");
+
+    for (var i = 0; i < 5; i++) {
+      var row = document.createElement("tr");
+
+      for (var j = 0; j < 5; j++) {
+        var cell = document.createElement("td");
+        cell.textContent = "Celda " + (i * 5 + j + 1);
+        row.appendChild(cell);
+      }
+
+      tbody.appendChild(row);
+    }
+
+    table.appendChild(tbody);
+    document.body.appendChild(table);
+
+    // Agregar eventos para alternar el color de fondo al hacer clic
+    table.addEventListener("click", function (event) {
+  if (event.target.tagName === "TD") {
+    var cell = event.target;
+    toggleCellColor(cell);
+  }
+});
+
+function toggleCellColor(cell) {
+  var currentColor = cell.style.backgroundColor || "white";
+  
+  if (currentColor && currentColor !== "white") {
+    // Si la celda ya tiene un color diferente a blanco, volverá a blanco
+    cell.style.backgroundColor = "white";
+  } else {
+    // Si la celda está blanca, se asigna un nuevo color aleatorio
+    var randomColor = getRandomColor();
+    cell.style.backgroundColor = randomColor;
+  }
+}
+
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+  });
+</script>
+
+</body>
+</html>

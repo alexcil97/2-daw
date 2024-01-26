@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        class Libro {
+            constructor(titulo, autor, paginas) {
+                this.titulo = titulo;
+                this.autor = autor;
+                this.paginas = paginas;
+                this.prestado = false;
+            }
+
+            prestar() {
+                this.prestado = true;
+            }
+        }
+
+        class Biblioteca {
+            constructor(nombre) {
+                this.nombre = nombre;
+                this.libros = [];
+            }
+
+            agregarLibro(libro) {
+                this.libros.push(libro);
+            }
+
+            buscarLibro(titulo) {
+                return this.libros.find(libro => libro.titulo === titulo);
+            }
+
+            librosDisponibles() {
+                return this.libros.filter(libro => !libro.prestado);
+            }
+        }
+
+        const miBiblioteca = new Biblioteca("Biblioteca Central");
+
+        // Pide al usuario que ingrese información sobre varios libros
+        const numLibros = prompt("Ingrese el número de libros que desea agregar a la biblioteca:");
+
+        for (let i = 0; i < numLibros; i++) {
+            const titulo = prompt("Ingrese el título del libro:");
+            const autor = prompt("Ingrese el autor del libro:");
+            const paginas = prompt("Ingrese la cantidad de páginas del libro:");
+
+            const nuevoLibro = new Libro(titulo, autor, paginas);
+            miBiblioteca.agregarLibro(nuevoLibro);
+
+            // Pide al usuario que indique si el libro está prestado o no
+            const estaPrestado = confirm(`¿El libro "${titulo}" está prestado?`);
+            if (estaPrestado) {
+                nuevoLibro.prestar();
+            }
+        }
+
+        const librosDisponibles = miBiblioteca.librosDisponibles();
+        console.log("Libros disponibles en la biblioteca:");
+        librosDisponibles.forEach(libro => {
+            console.log(`- ${libro.titulo} (${libro.autor}) - ${libro.paginas} páginas`);
+        });
+
+
+    </script>
+</body>
+
+</html>

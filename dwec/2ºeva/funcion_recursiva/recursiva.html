@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function bucleRecursividad(n, exponente = 3) {
+            var gs = "";
+            var sd = 0;
+            var cf = 1;
+            var cf2 = 1;
+            var cp = 0;
+            var base = n !== null ? n : base;
+            console.log("n " + n + " expo " + exponente);
+            for (let i = 1; i <= n; i++) {
+
+                gs = generarSecuencia(i, gs);
+                sd = sumaDigitos(i, sd);
+                cf = calcularFactorial(i, cf);
+
+                if (i <= exponente) {
+
+                    cf2 = calcularFactorial(i, cf2);
+                } else {
+                    continue;
+                }
+            }
+            cp = calcularPotencia(base, cf2, n);
+
+
+            function generarSecuencia(valor, secuencia) {
+                secuencia = secuencia + valor;
+                return secuencia;
+            }
+
+            function sumaDigitos(valor, suma) {
+                suma = suma + valor;
+                return suma;
+            }
+
+            function calcularFactorial(valor, factorial) {
+                factorial = factorial * valor;
+                return factorial;
+            }
+
+            function calcularPotencia(base, cf2, n) {
+                console.log("base " + base + " cf2:" + cf2);
+                return Math.pow(n !== null ? n : base, cf2);
+
+            }
+
+
+            console.log("Generar secuencia: " + gs);
+            console.log("Sumar los digitos: " + sd);
+            console.log("Calcular factorial: " + cf);
+            console.log("Calcular potencia: " + cp);
+        }
+
+        bucleRecursividad(6);
+        var entrada = prompt("Ingrese un numero");
+        var exponente = prompt("Ingrese un exponente");
+        bucleRecursividad(parseInt(entrada), parseInt(exponente));
+    </script>
+</body>
+
+</html>

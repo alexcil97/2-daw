@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 400 16/90% Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .container {
+            flex-direction: column;
+            width: 80%;
+            height: 80%;
+            display: flex;
+            border: 2px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .container__item {
+            width: 100%;
+            height: 10%;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f0f0f0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let divs = new Array();
+        let divsImg = new Array();
+        let divsCanciones = new Array();
+        let contenedor = document.createElement("div");
+        contenedor.classList.add("container");
+        document.body.appendChild(contenedor);
+
+        for (let index = 0; index < array.length; index++) {
+            let nuevaImg = divsImg.createElement("div");      
+            nuevaImg.classList.add("div__img"); 
+            let nuevaCanción = divsCanciones.createElement("a");
+            nuevaCanción.setAttribute("href", "cancion.html?id=" + index)
+        }
+
+        for (let index = 0; index < 5; index++) {
+            let nuevoDiv = document.createElement("div");
+            nuevoDiv.classList.add("container__item");
+            nuevoDiv.textContent = "Villancico " + (index + 1);
+            divs.push(nuevoDiv);
+        }
+
+        for (let index = 0; index < divs.length; index++) {
+            contenedor.appendChild(divs[index]);
+        }
+    </script>
+</body>
+
+</html>

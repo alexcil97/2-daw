@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>titulo1</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: gray;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            justify-content: center ;
+        }
+        div{
+            border: 1px solid black;
+            padding: 5%;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>cambia el nombre de la pagina</p>
+        <input type="text" id="titulo">
+        <button onclick="cambiarTitulo()">Cambiar</button>
+    </div>
+    <script>
+        // Parte 2
+        // Obtener el conjunto de caracteres del documento
+        var characterSet = document.characterSet;
+
+        // Mostrar el conjunto de caracteres en la consola
+        console.log("Conjunto de caracteres del documento:", characterSet);
+
+        function cambiarTitulo() {
+            var titulo = document.getElementById("titulo");
+            // Mostrar el título actual del documento en la consola
+            console.log("Título actual del documento:", document.title);
+
+            // Cambiar el título del documento
+            document.title = titulo.value;
+
+            // Mostrar el título actualizado en la consola
+            console.log("Título actualizado del documento:", document.title);
+        }
+
+        // Parte 3
+        console.log(document.location.href);      // Muestra la URL completa
+        console.log(document.location.hostname);  // Muestra el nombre del host
+        console.log(document.location.pathname);  // Muestra la parte de la URL después del nombre del host
+
+        console.log(document.referrer); // Muestra la URL de la página de referencia
+
+    </script>
+</body>
+
+</html>

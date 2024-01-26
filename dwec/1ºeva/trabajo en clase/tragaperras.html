@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Obtén la referencia al botón dentro de la función DOMContentLoaded
+            const boton = document.getElementById("boton");
+
+            boton.addEventListener('click', function (e) {
+                let puestoUno = Math.floor(Math.random() * 3) + 1;
+                let puestoDos = Math.floor(Math.random() * 3) + 1;
+                let puestoTres = Math.floor(Math.random() * 3) + 1;
+
+                // Puedes mostrar los números en algún elemento en el DOM, por ejemplo, un div con id "resultados"
+                const resultadosDiv = document.getElementById("resultados");
+
+                document.querySelector(".resultado1").textContent = puestoUno;
+                document.querySelector(".resultado2").textContent = puestoDos;
+                document.querySelector(".resultado3").textContent = puestoTres;
+                if (puestoUno===puestoDos && puestoDos===puestoTres) {
+                document.querySelector(".resultado").textContent = "Enhorabuena has ganado!!!!";
+                    
+                }else{
+                document.querySelector(".resultado").textContent = "Lo siento has perdido";
+
+                }
+            });
+        });
+    </script>
+    <style>
+
+        body{
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+        #fondo{
+            background-color: limegreen;
+            width: 500px;
+            height: 300px;
+            text-align: center;
+        }
+        #buttondiv{
+            display: block;
+            margin-top: 0%;
+            height: 100%;
+            margin-top: 40%;
+        }
+        #boton{
+            margin:auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="fondo">
+        <div id="resultados">
+                <p class="resultado1">0</p>
+                <p class="resultado2">0</p>
+                <p class="resultado3">0</p>
+                <p class="resultado"></pclass></p>
+            <div id="buttondiv">
+                <button id="boton">jugar!</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

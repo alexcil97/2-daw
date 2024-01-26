@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../js/bootstrap.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="bg-success text-warning  d-flex justify-content-center">
+    <form>
+        <div class="container mt-5 ">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label for="nombre">Correo:</label>
+                        <input type="text" class="form-control text-muted" id="nombre" name="nombre"
+                            value="correo@correo.es">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label for="nombre">Mensaje:</label>
+                        <textarea name="Mensaje" id="mensaje" cols="5" rows="2" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-4">
+                    <div class="form-group">
+                        <label for="nombre">estado civil</label>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="radio" name="soltero" id="soltero">
+                            <label for="soltero" class="form-check-label">Soltero</label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="radio" name="casado" id="casado">
+                            <label for="casado" class="form-check-label">Casado</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-4">
+                    <div class="form-group">
+                        <label for="pais">País</label>
+                        <select id="pais" class="form-select">
+                            <option selected>Portugal</option>
+                            <option>España</option>
+                            <option>Francia</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+                    <div class="form-check mt-5 ">
+                        <input class="form-check-input" type="checkbox" id="terminos">
+                        <label for="terminos" class="form-check-label">Acepto los terminos y condiciones</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">button</button>
+            </div>
+        </div>
+        </div>
+    </form>
+</body>
+
+</html>

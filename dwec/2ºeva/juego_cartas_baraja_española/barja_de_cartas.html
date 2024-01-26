@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Documento creado por Alejandro Cil Jimenez
+fecha 09/12/2023
+2ºDAW
+version:1.0
+errores: no me perimitia enlazar la funcion con el metodo, arreglado creando un archivo nuevo y haciendo lo mismo
+buenas practicas: 
+comentarios en las partes mas importantes
+declaracion correcta de funciones, metodos, variables, etc...
+respetado el camelCase para los nombres de las variables y metodos
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: radial-gradient(rgb(169, 206, 247), rgb(164, 165, 164),rgb(24, 145, 237), rgba(110, 110, 110, 0.541));
+        }
+
+        div {
+            padding: 1%;
+            margin: 0%;
+            border: 3px solid black;
+            background-image: radial-gradient(rgb(169, 206, 247), rgb(164, 165, 164));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+
+        form {
+            width: 100%;
+            height: 100%;
+            padding: 5%;
+            margin: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+
+        input {
+            margin: 5%;
+            background-image: radial-gradient(rgb(28, 146, 244), rgb(51, 51, 51));
+            color: white;
+            text-align: center;
+        }
+
+        button {
+            width: 50%;
+            height: 100px;
+            background-image: radial-gradient(rgb(127, 184, 230), rgb(128, 128, 128));
+            font-weight: bold;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin: 5%;
+        }
+
+        p {
+            margin: 2%;
+            display: flex;
+            font-size: 100px;
+            font-weight: bold;
+            margin-top: -20%;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function generarBaraja() {
+            var baraja = [];
+            var palos = ['oros', 'copas', 'espadas', 'bastos'];
+
+            for (var i = 1; i <= 9; i++) {
+                for (var j = 0; j < palos.length; j++) {
+                    var carta = {
+                        valor: i,
+                        palo: palos[j]
+                    };
+                    baraja.push(carta);
+                }
+            }
+
+            var especiales = ['sota', 'caballo', 'rey'];
+
+            for (var k = 0; k < especiales.length; k++) {
+                for (var l = 0; l < palos.length; l++) {
+                    var cartaEspecial = {
+                        valor: especiales[k],
+                        palo: palos[l]
+                    };
+                    baraja.push(cartaEspecial);
+                }
+            }
+
+            return baraja;
+        }
+
+        var miBaraja = generarBaraja();
+        console.log(miBaraja);
+         
+        function validarNumero(input) { //esta parte fue con ayuda de chatgpt
+            var boton = document.getElementById("boton");
+            if (input.value >= 1 && input.value <= 48) {
+                boton.disabled = false; // activa el boton si el numero es valido
+            } else {
+                boton.disabled = true; // desactiva el boton si el numero no es valido
+            }
+        }//aqui termina la ayuda
+
+        function shuffle(miBaraja) {
+            var n = miBaraja.length;//almacenamos el tamaño de la baraja
+            for (let i = n - 1; i > 0; i--) {//indicamos que el bucle acabe cuando se haya recorrido el tamaño de la baraja
+                var j = Math.floor(Math.random() * (i + 1)); //j sera un numero aleatorio que indicara una carta de la baraja
+                var aux = miBaraja[i];
+                miBaraja[i] = miBaraja[j];
+                miBaraja[j] = aux; //sustituiremos la ultima carta por la carta con la posicion j
+            }
+            console.log(miBaraja);
+            var size = miBaraja.length - 1;
+            var cartaAleatoria = Math.floor(Math.random() * (size + 1));
+            var primeraCarta = miBaraja[0];
+            var cartaSeleccionada = miBaraja[cartaAleatoria];
+            alert('la primera carta es : ' + primeraCarta.valor + ' de ' + primeraCarta.palo);
+            alert('Has sacado la carta: ' + cartaSeleccionada.valor + ' de ' + cartaSeleccionada.palo);
+            return miBaraja;
+        }
+    </script>
+    <div>
+        <form action="">
+            <h1>Elige una carta</h1>
+            <input type="number" max="48" min="1" oninput="validarNumero(this)"> <!-- el oninput fue creado con chatgpt -->
+            <button onclick='shuffle(miBaraja)' id="boton" disabled>
+                <p>☻</p>
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>

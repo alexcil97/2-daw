@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Circulo(radio, base, altura) {
+            var _radio = radio == undefined ? 0 : radio;
+            var _base = base == undefined ? 0 : base;
+            var _altura = altura == undefined ? 0 : altura;
+            var _area = base * altura == undefined ? 0 : base * altura;
+
+            this.__defineSetter__('area', function (x, y) { _area = base * altura });
+            this.__defineGetter__('area', function () { return base * altura });
+            this.__defineSetter__('base', function (x) { _base = base });
+            this.__defineGetter__('base', function () { return base });
+            this.__defineSetter__('altura', function (x, y) { _altura = altura });
+            this.__defineGetter__('altura', function () { return altura });
+            this.__defineSetter__('perimetro', function (x) { _radio = x / (2 * Math.PI); });
+            this.__defineGetter__('perimetro', function () { return 2 * Math.PI * _radio; });
+        }
+        var circulo1 = new Circulo(2, 8, 6);
+        console.log(circulo1.perimetro);
+        circulo1.perimetro = 2;
+        circulo1.base = 2;
+        circulo1.altura = 4;
+        console.log(circulo1.base);
+        console.log(circulo1.altura);
+        console.log(circulo1.area);
+
+        function shuffle(array) {
+            var n = array.length;
+            for (let i = n - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+
+
+                var aux = array[i];
+                array[i] = ingredientes[j];
+                array[j] = aux;
+            }
+        }
+
+        var ingredientes = ['leche', 'cacao', 'avellanas', 'azucar', 'NO-CI-LLA'];
+        shuffle(ingredientes);
+        console.log(ingredientes);
+
+
+        function generarBaraja() {
+            var baraja = [];
+
+            // Palos
+            var palos = ['oros', 'copas', 'espadas', 'bastos'];
+
+            // Cartas numeradas
+            for (var i = 1; i <= 9; i++) {                          //aqui indicamos que las cartas iran del 1 al 12
+                for (var j = 0; j < palos.length; j++) {            //aqui indicamos el palo, la eleccion se hara por valor numerico
+                    var carta = {                                   //declaramos la variable carta y le asignamos valores
+                        valor: i,
+                        palo: palos[j]
+                    };                                              //2 bucles, bucle 1 rrecorre los numeros,bucle 2 rrecorre los palos, por cada recorrido del numero rrecorre 4 palos
+                    baraja.push(carta);                             //devolvemos la carta al array
+                }
+            }
+
+            // Cartas especiales (sotas, caballos, reyes)
+            var especiales = ['sota', 'caballo', 'rey'];            //variables para indicar los valores no numericos de la baraja
+
+            for (var k = 0; k < especiales.length; k++) {           //usamoos doble bucle el primeor recorrera las especialidades y el segundo los palos tal como en el primer bucle pero sin numeros
+                for (var l = 0; l < palos.length; l++) {
+                    var cartaEspecial = {
+                        valor: especiales[k],
+                        palo: palos[l]
+                    };
+                    baraja.push(cartaEspecial);                     //usa
+                }
+            }
+
+            return baraja;
+        }
+
+        // Ejemplo de uso
+        var miBaraja = generarBaraja();
+        console.log(miBaraja);
+        function barajar() {
+            var size = miBaraja.length - 1;                                                                      //asignamos el tamaño del array menos 1 para poder usarlo sin que nos salga el IndexoutOFbounds
+            console.log('al sacar una carta te toca: ', miBaraja[Math.floor(Math.random() * (size + 1))]);        // hacemos un rrandom de una posicion del array usando la variable creada arriba para que concuerde con el tamaño del array
+        }
+
+    </script>
+    <div>
+        <label for="carta">Inserte el numero de carta de desea sacar:</label>
+        <input type="number" name="carta" id="carta">
+        <button oneClick="baraja()">Barajar</button>
+    </div>
+</body>
+
+</html>

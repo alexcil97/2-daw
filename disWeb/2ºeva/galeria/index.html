@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            box-sizing: border-box;
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(180deg, rgba(134, 141, 143, 0.7148109243697479) 61%, rgba(0, 0, 0, 0.89) 91%);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5%;
+            grid-auto-rows: minmax(0, 1fr);
+            padding: 1%;
+            width: 90%;
+            height: 90%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .container img {
+            border: 5px solid rgba(0, 0, 0, 0.925);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+            box-sizing: border-box;
+        }
+
+        .container img:hover {
+            transform: scale(1.5);
+            z-index: 1;
+            align-items: center;
+            box-sizing: border-box;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: scale(1.5) translateX(0);
+            }
+            25%, 75% {
+                transform: scale(1.5) translateX(-5px);
+            }
+            50% {
+                transform: scale(1.5) translateX(5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="Imagenesg/imagen1.jpeg" alt="pelicula 1">
+        <img src="Imagenesg/imagen2.jpeg" alt="pelicula 2">
+        <img src="Imagenesg/imagen3.webp" alt="pelicula 3">
+        <img src="Imagenesg/imagen4.jpeg" alt="pelicula 4">
+        <img src="Imagenesg/imagen5.jpeg" alt="pelicula 5">
+        <img src="Imagenesg/imagen6.jpeg" alt="pelicula 6">
+        <img src="Imagenesg/imagen7.jpeg" alt="pelicula 7">
+        <img src="Imagenesg/imagen8.jpeg" alt="pelicula 8">
+        <img src="Imagenesg/imagen9.webp" alt="pelicula 9">
+        <img src="Imagenesg/imagen10.jpeg" alt="pelicula 10">
+        <img src="Imagenesg/imagen11.jpeg" alt="pelicula 11">
+        <img src="Imagenesg/imagen12.jpeg" alt="pelicula 12">
+    </div>
+</body>
+
+</html>

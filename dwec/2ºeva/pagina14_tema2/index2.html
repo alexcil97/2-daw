@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByTagName Example</title>
+</head>
+
+<body>
+    <div id="parent">
+        <p class="example">Paragraph 1</p>
+        <p class="example">Paragraph 2</p>
+        <p class="example">Paragraph 3</p>
+    </div>
+    <script>
+        // Obtener todas las etiquetas <p>
+        var paragraphs = document.getElementsByTagName("p");
+
+        // Iterar sobre la colección de elementos y mostrar el contenido de cada párrafo
+        for (var i = 0; i < paragraphs.length; i++) {
+            console.log(paragraphs[i].textContent);
+        }
+
+        var parent = document.getElementById("parent");
+
+        // Obtener todos los nodos hijos del elemento padre
+        var children = parent.childNodes;
+
+        // Iterar sobre la colección de nodos hijos y mostrar el tipo y contenido de cada nodo
+        for (var i = 0; i < children.length; i++) {
+            console.log("Tipo:", children[i].nodeType, "Contenido:", children[i].textContent);
+        }
+
+        // Obtener el primer elemento con la clase "example"
+        var firstElement = document.querySelector(".example");
+
+        // Mostrar el contenido del primer elemento
+        console.log(firstElement.textContent);
+    </script>
+</body>
+
+</html>

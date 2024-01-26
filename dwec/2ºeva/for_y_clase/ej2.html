@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            margin-top: 5%;
+            background-color: rgb(192, 223, 254);
+            font-weight: bold;
+            font-size: larger;
+            
+        }
+
+        button {
+            margin: 2%;
+            width: 75px;
+            height: 45px;
+        }
+      
+    </style>
+</head>
+
+<body>
+    <!-- Creamos el formulario para pasarle los valores -->
+    <label for="numerito">Ingrese el numero a multiplicar: </label>
+    <input type="number" id="numerito">
+    <button id="enviar">Enviar</button>
+    <script>
+        //esta funcion hace de actuador, cuando se presione el button con el id enviar cargara la ejecucion de la funcion
+        document.getElementById('enviar').addEventListener('click', function () {
+            //creacion de tabla haciendo uso de DOM
+            var tabla = document.createElement("table");
+            tabla.border = 1;
+            //creacion de filas y columnas haciendo uso de DOM
+            for (let i = 0; i <= 10; i++) {
+                var fila = document.createElement("tr");
+                var columna1 = document.createElement("td");
+                //insertar los valores de la columna 1 mediante nodos de texto
+                columna1.appendChild(document.createTextNode(document.getElementById("numerito").value+"*"+i));
+                var columna2 = document.createElement("td");
+                //insertar los valores de la columna 2 mediante nodos
+                columna2.appendChild(document.createTextNode(document.getElementById("numerito").value * i));
+
+                //añadimos las columnas a la fila
+                fila.appendChild(columna1);
+                fila.appendChild(columna2);
+                //añadimos la fila a la tabla
+                tabla.appendChild(fila);
+            }
+            // Reemplazar la tabla existente eliminandola si existe al ejecutar el script
+            var tablaActual = document.getElementById("tabla");
+            if (tablaActual) {
+                tablaActual.parentNode.removeChild(tablaActual);
+            }
+            //le da un id a la tabla creada para poder añadirla a la pagina
+            tabla.id = "tabla";
+            //inserta la tabla en la pagina html
+            document.body.appendChild(tabla);
+        });
+    </script>
+</body>
+
+</html>

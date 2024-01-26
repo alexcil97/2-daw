@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        // Archivo creado por: Alejandro Cil Jimenez
+        // Curs0: 2ºDAW
+        // Fecha de creación: 01/12/2023
+
+        // Programa 1
+
+        // Version: 0.0.1
+        /*
+           Buenas prácticas usadas:
+           - Uso de un solo archivo para el código
+           - Comentarios en partes no implementadas o innecesarias
+           - Organización y separación eficiente de métodos
+           - Evitación de redundancia
+           - Nombres descriptivos para variables
+           - Indentación adecuada
+           - Correcta estructura de control de flujo
+           - Apropiada estructura de repetición y funciones
+           - Uso adecuado de clases y llamados a funciones (directos e indirectos)
+        */
+
+        // declaramos la clase e inizializamos los metodos getter y setter
+        class Gas {
+            constructor(temperaturaKelvin) {
+                this.temperaturaKelvin = temperaturaKelvin
+            }
+
+            set temperaturaCelsius(x) {
+                this.temperaturaKelvin = x + 273;
+
+            }
+
+            get temperaturaCelsius() {
+                return this.temperaturaKelvin - 273;
+            }
+
+        };
+        // generamos una instancia de la clase gas y probamos los metodos getter y setter
+        const gas1 = new Gas(400);
+        //esto es un metodo getter
+        alert("primer valor " + gas1.temperaturaCelsius);
+        // esto es un metodo setter
+        gas1.temperaturaKelvin = 700;
+        alert("segundo valor " + gas1.temperaturaCelsius);
+        alert("tercer valor " + gas1.temperaturaKelvin);
+
+
+        // Programa2
+        // Version: 0.0.1
+        class Agua {
+            constructor() {
+                this._temperatura = 0;
+                this._litros = 0;
+                this._mililitros = 0;
+                this._galones = 0;
+                // utilizamos la clase Object y llamamos a su metodo definePropieties para declarar directamente todos los valores 
+                Object.defineProperties(this, {
+                    _temperatura: {
+                        value: 0,
+                        writable: true,
+                        enumerable: true,
+                        configurable: true
+                    },
+                    _litros: {
+                        value: 0,
+                        writable: true,
+                        enumerable: true,
+                        configurable: true
+                    },
+                    _mililitros: {
+                        value: 0,
+                        writable: true,
+                        enumerable: true,
+                        configurable: true
+                    },
+                    _galones: {
+                        value: 0,
+                        writable: true,
+                        enumerable: true,
+                        configurable: true
+                    }
+
+                }
+                )
+            }
+            //creamos los getter y setter correspondientes 
+            get temperatura() {
+                let temperatura = this._temperatura
+                return temperatura;
+            }
+            set temperatura(temp) {
+                if (temp > 100) {
+                    alert("la temperatura ha sobrepasado el punto de ebullicion");
+                    this._temperatura = 100;
+                } else {
+                    this._temperatura = temp;
+                }
+            }
+            get litros() {
+                return this._litros;
+            }
+            set litros(litros) {
+                this._litros = litros;
+            }
+
+            calcularMililitros() {
+                this._mililitros = this._litros * 1000;
+                return this._mililitros;
+            }
+
+            calcularPresion(area, superficie, altura) {
+                let densidad=0;
+                let gravedad=0;
+                densidad = 1000 * (this._litros / Math.pow(area, 3));
+                gravedad = 10 * (area / Math.pow(superficie, 2));
+                this._presion = densidad * gravedad * altura
+                return this._presion;
+            }
+            convertirLitrosEnGalones() {
+                this._galones = this._litros / 3785;
+                return this._galones;
+            }
+        }
+
+        //aqui probaremos el codigo
+        const agua1 = new Agua();
+        agua1.temperatura = 90;
+        console.log("Temperatura del agua:", agua1.temperatura);
+        console.log("Mililitros calculados:", agua1.calcularMililitros());
+        agua1.temperatura = 120;
+        console.log("Temperatura del agua:", agua1.temperatura);
+        agua1.litros=120;
+        console.log("cantidad del agua:", agua1.litros);
+        const presionAgua = agua1.calcularPresion(5,3,10); 
+        console.log("la presion del agua es:" , presionAgua);
+
+
+    </script>
+</body>
+
+</html>

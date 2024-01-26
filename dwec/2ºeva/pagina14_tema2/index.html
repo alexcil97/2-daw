@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function verSrcDeLaPrimeraImagen() {
+            alert(document.images[0].src);
+        }
+    </script>
+</head>
+<body>
+    <img id="primera_imagen" src="imagen1.jpeg" alt="imagen1">
+    <br><br>
+    <img id="segunda_imagen" src="imagen2.jpeg" alt="imagen2">
+    <button type="button" onclick="verSrcDeLaPrimeraImagen();"> verSrcDeLaPrimeraImagen</button>
+</body>
+</html>

@@ -1,0 +1,1 @@
+perro: raza=Labradoredad=3color=doradogato: raza=Siamesedad=2color=blancopajaro: tipo=Canarioedad=1color=amarillo

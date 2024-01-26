@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            height: 80%;
+            border:1px solid black;
+            display: grid;
+            grid-template-rows: repeat(3,150px);
+            grid-template-columns: repeat(3, 1fr 2fr);
+        
+        }
+        .container__item{
+            border: 1px solid black;
+        }
+        .item--blue{
+            background-color: blue;
+        }
+        .item--yellow{
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="container">
+            <div class="container__item  item--blue">1</div>
+            <div class="container__item  item--blue">2</div>
+            <div class="container__item  item--blue">3</div>
+            <div class="container__item  item--blue">4</div>
+            <div class="container__item  item--blue">5</div>
+            <div class="container__item  item--blue">6</div>
+            <div class="container__item  item--yellow">7</div>
+            <div class="container__item  item--yellow">8</div>
+            <div class="container__item  item--yellow">9</div>
+            <div class="container__item  item--yellow">10</div>
+            <div class="container__item  item--yellow">11</div>
+            <div class="container__item  item--yellow">12</div>
+        </div>
+</body>
+</html>

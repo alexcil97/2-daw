@@ -1,0 +1,30 @@
+header {
+  background-color: gray;
+  border: outset;
+}
+body {
+  background-color: gray;
+  border: outset;
+}
+a {
+  color: rgb(0, 251, 63);
+  margin-top: -3%;
+  margin-left: 45%;
+  margin-right: 20%;
+}
+.milogo {
+  width: 20%;
+  height: 20%;
+  size: 30cm;
+  display: block;
+  margin-top: 1%;
+  margin-left: 45%;
+}
+table,
+th,
+td {
+  border: 1px solid;
+}
+.piedepagina{
+  color: blueviolet;
+}

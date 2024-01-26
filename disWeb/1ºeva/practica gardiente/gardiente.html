@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>practica gardiente</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css">
+    <!-- Estilos personalizados para la practica -->
+    <style>
+        body {
+            height: 680px;
+            background-image: linear-gradient(gray, black);
+            background-color: red;
+        }
+
+        div.n1 {
+            background: linear-gradient(red, blue, limegreen);
+            border-radius: 5px;
+            height: 70px;
+            width: 130px;
+            position: absolute;
+            margin-left: 40%;
+            margin-top: 2%;
+            z-index: -1;
+        }
+        div.n2 {
+            border-radius: 5px;
+            height: 70px;
+            width: 130px;
+            position: absolute;
+            margin-left: 20%;
+            margin-top: 8%;
+            z-index: 1;
+            background: radial-gradient(red, blue, limegreen);
+
+        }
+        img{
+            background-image: radial-gradient(red,limegreen,blue);
+            z-index: -1;
+        }
+
+        button {
+            background-color: black;
+            border: 5px;
+            height: 60px;
+            width: 120px;
+            position: relative;
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        p {
+            background: linear-gradient( to right,red 20%, blue 60%, limegreen 20%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bolder;
+            font-size: x-large;
+            text-align: center;
+            top: 50%;
+            transform: translate(0%,-30%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="n1">
+        <button type="button" oneclick="alert('Hello world')">
+            <p>platano</p>
+        </button>
+    </div>
+    <div class="n2">
+        <img src="caballos-salvajes.jpg" alt="caballos">
+    </div>
+</body>
+
+</html

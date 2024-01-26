@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>HTML5</title>
+        <!--<link rel="stylesheet" href="css/main.css">-->
+        <style>
+            fieldset{
+                width: 35%;
+                margin: auto;
+                position: relative;
+                top: 120px;
+            }
+            img{
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 5%;
+                margin-left: 5%;
+                margin-right: 40%;
+            }
+        </style>
+        <script>
+      function masaMaximaCamion(nombreGrano) {
+        
+        return function (kilos) {
+            var kilosTotales= 0 ;
+            if (nombreGrano=='avena') 
+            {
+
+                kilosTotales=kilos/1.8;
+
+
+                }else if (nombreGrano=='cebada') {
+
+                    kilosTotales=kilos/1.4;
+
+
+                }else if (nombreGrano=='maiz') {
+                kilosTotales = kilos / 1.2;
+
+
+                }
+
+        };
+  
+
+
+      }
+        var kilos = document.getElementById('cantidadGrano');
+        var nombreGrano = document.getElementById('tipoGrano');
+    </script>
+    </head>
+    <body>
+        <fieldset>
+            <div id="header"></div>
+            <form action="getn">
+                <img src="camion_vacio.png" alt="vacio" />
+
+                <label for="tipoGrano">Elegir grano</label>
+                <select name="tipoGrano" id="tipoGrano">
+                    <option value="avena">Avena</option>
+                    <option value="cebada">Cebada</option>
+                    <option value="maiz">Maiz</option>
+                </select>
+                &nbsp;
+                <label for="cantidadGrano">Cantidad de Grano: </label>
+                <input type="number" id="cantidadGrano" name="cantidadGrano">
+            </fieldset>
+        </form>
+    </body>
+</html>

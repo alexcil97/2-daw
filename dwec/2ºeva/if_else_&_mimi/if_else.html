@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let edad = 0;
+        while (edad <= 0 || edad > 100) {
+            edad = prompt("indique su edad");
+            if (edad <= 0 || edad > 100) {
+                alert("edad incorrecta")
+            }
+        }
+        if (edad >= 18) {
+            alert('eres mayor de edad');
+        } else {
+            alert('eres menor de edad');
+            
+        }
+    </script>
+</body>
+
+</html>

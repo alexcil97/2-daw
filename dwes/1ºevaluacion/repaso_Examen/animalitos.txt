@@ -1,0 +1,4 @@
+perro: tipo mamífero, 4 patas, sonido ladrido
+gato: tipo mamífero, 4 patas, sonido maullido
+pájaro: tipo ave, 2 patas, sonido canto
+serpiente: tipo reptil, 0 patas, sonido siseo

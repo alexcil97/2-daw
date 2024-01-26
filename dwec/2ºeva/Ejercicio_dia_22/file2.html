@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Teclado</title>
+</head>
+
+<body>
+    <h1>Presiona una tecla específica</h1>
+    <p id="resultado">Esperando entrada...</p>
+
+    <script>
+        document.addEventListener('keydown', function (event) {
+            const teclaEspecifica = 'A'; // Cambia esta letra a la tecla que desees
+
+            if (event.key.toUpperCase() === teclaEspecifica) {
+                document.getElementById('resultado').innerText = '¡Correcto! Has presionado la tecla ' + teclaEspecifica;
+                // Otorgar dos puntos adicionales si se presiona Enter
+                document.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter') {
+                        // Agrega 2 puntos al resultado
+                        document.getElementById('resultado').innerText += '\n¡Dos puntos adicionales! Prensa Enter.';
+                        // Realizar otras acciones o contabilizar puntos adicionales aquí
+                    }
+                });
+            } else {
+                document.getElementById('resultado').innerText = 'Incorrecto. Intenta nuevamente.';
+            }});
+            
+    </script>
+</body>
+
+</html>
