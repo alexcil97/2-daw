@@ -15,7 +15,7 @@
         $name = !empty($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : "Esta vacio";
         $description = !empty($_POST['description']) ? htmlspecialchars(trim($_POST['description'])) : "esta vacio";
         $price = !empty($_POST['price']) ? htmlspecialchars(trim($_POST['price'])) : "esta vacio";
-
+        
 
         $conex = new mysqli(BBDD_HOST, BBDD_NAME, BBDD_PASSWORD, BBDD_USER);
         if (mysqli_connect_errno()) {
